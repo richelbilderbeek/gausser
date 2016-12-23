@@ -5,7 +5,7 @@
 
 namespace ribi {
 
-///Quick calculation of Guass
+///Quick calculation of Gauss
 class gausser_impl_3
 {
 public:
@@ -18,10 +18,10 @@ private:
   const double m_sd;
 
   ///Lookup table
-  const std::array<double, 6000> m_lut;
+  const std::array<double, 10000> m_lut;
 
   ///Create the LUT
-  std::array<double, 6000> create_lut(const double sd);
+  std::array<double, 10000> create_lut(const double sd);
 };
 
 } //~namespace ribi
