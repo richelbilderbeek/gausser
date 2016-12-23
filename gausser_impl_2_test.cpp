@@ -20,6 +20,9 @@ BOOST_AUTO_TEST_CASE(ribi_gausser_impl_2)
     const double measured{g(x)};
     BOOST_CHECK_CLOSE(measured, expected, 0.000001);
   }
+  //Extremes should also work
+  BOOST_CHECK_NO_THROW(g(-5.0));
+  BOOST_CHECK_NO_THROW(g( 5.0));
 }
 
 #pragma GCC diagnostic pop
