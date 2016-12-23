@@ -11,7 +11,7 @@ void benchmark_gausser()
   const double sd{1.0};
   const double min_x{-4.0};
   const double max_x{4.0};
-  const double dx{8.0 / 100000000.0};
+  const double dx{8.0 / 1000000000.0};
   double sum_gauss{0.0};
   double sum_gausser{0.0};
   int n_millis_gauss{0};
