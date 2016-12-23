@@ -12,7 +12,6 @@ public:
   ///@param sd standard deviation of the gaussian
   gausser_impl_3(const double sd);
 
-  ///Fast function
   double operator()(const double x) const noexcept;
 
 private:
@@ -23,8 +22,6 @@ private:
 
   ///Create the LUT
   std::array<double, 6000> create_lut(const double sd);
-
-
 };
 
 } //~namespace ribi
