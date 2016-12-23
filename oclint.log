@@ -1,0 +1,51 @@
+
+Compiler Errors:
+(please be aware that these errors will prevent OCLint from analyzing this source code)
+
+/usr/include/c++/5/cmath:102:11: no member named 'acos' in the global namespace
+/usr/include/c++/5/cmath:121:11: no member named 'asin' in the global namespace
+/usr/include/c++/5/cmath:140:11: no member named 'atan' in the global namespace
+/usr/include/c++/5/cmath:159:11: no member named 'atan2' in the global namespace
+/usr/include/c++/5/cmath:180:11: no member named 'ceil' in the global namespace
+/usr/include/c++/5/cmath:199:11: no member named 'cos' in the global namespace
+/usr/include/c++/5/cmath:218:11: no member named 'cosh' in the global namespace
+/usr/include/c++/5/cmath:237:11: no member named 'exp' in the global namespace
+/usr/include/c++/5/cmath:256:11: no member named 'fabs' in the global namespace
+/usr/include/c++/5/cmath:275:11: no member named 'floor' in the global namespace
+/usr/include/c++/5/cmath:294:11: no member named 'fmod' in the global namespace
+/usr/include/c++/5/cmath:315:11: no member named 'frexp' in the global namespace
+/usr/include/c++/5/cmath:334:11: no member named 'ldexp' in the global namespace
+/usr/include/c++/5/cmath:353:11: no member named 'log' in the global namespace
+/usr/include/c++/5/cmath:372:11: no member named 'log10' in the global namespace
+/usr/include/c++/5/cmath:391:11: no member named 'modf' in the global namespace
+/usr/include/c++/5/cmath:403:11: no member named 'pow' in the global namespace
+/usr/include/c++/5/cmath:440:11: no member named 'sin' in the global namespace
+/usr/include/c++/5/cmath:459:11: no member named 'sinh' in the global namespace
+:0:0: too many errors emitted, stopping now
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:38:12: no member named 'abort' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:39:12: no member named 'atexit' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:40:12: no member named 'exit' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:43:14: no member named 'at_quick_exit' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:46:14: no member named 'quick_exit' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:51:12: no member named 'div_t' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:52:12: no member named 'ldiv_t' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:54:12: no member named 'abs' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:55:12: no member named 'atof' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:56:12: no member named 'atoi' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:57:12: no member named 'atol' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:58:12: no member named 'bsearch' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:59:12: no member named 'calloc' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:60:12: no member named 'div' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:61:12: no member named 'free' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:62:12: no member named 'getenv' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:63:12: no member named 'labs' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:64:12: no member named 'ldiv' in namespace 'std'
+/usr/lib/gcc/x86_64-linux-gnu/6.2.0/../../../../include/c++/6.2.0/stdlib.h:65:12: no member named 'malloc' in namespace 'std'
+
+
+OCLint Report
+
+Summary: TotalFiles=1 FilesWithViolations=0 P1=0 P2=0 P3=0 
+
+
+[OCLint (http://oclint.org) v0.10.3]
