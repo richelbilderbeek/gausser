@@ -5,6 +5,7 @@
 #include "gausser.h"
 #include "gausser_impl_1.h"
 #include "gausser_impl_2.h"
+#include "gausser_impl_3.h"
 
 using namespace ribi;
 using my_clock = std::chrono::high_resolution_clock;
@@ -109,6 +110,29 @@ double measure_gausser_impl_2(const benchmark_parameters& p)
   return n_millis;
 }
 
+double measure_gausser_impl_3(const benchmark_parameters& p)
+{
+  const double sd{p.sd};
+  const double min_x{p.min_x};
+  const double max_x{p.max_x};
+  const double dx{p.dx};
+
+  double sum{0.0};
+  const auto start_time = my_clock::now();
+  {
+    const gausser_impl_3 g(sd);
+    for (double x{min_x}; x<max_x; x+=dx)
+    {
+      sum += g(x);
+    }
+  }
+  const auto end_time = my_clock::now();
+  const auto diff = end_time - start_time;
+  const double n_millis = std::chrono::duration_cast<msec>(diff).count();
+  std::clog << "sum gausser_impl_3: " << sum << '\n';
+  return n_millis;
+}
+
 
 void benchmark_gausser()
 {
@@ -117,6 +141,7 @@ void benchmark_gausser()
   std::clog << "n_millis_gausser: " << measure_gausser(p) << '\n';
   std::clog << "n_millis_gausser_impl_1: " << measure_gausser_impl_1(p) << '\n';
   std::clog << "n_millis_gausser_impl_2: " << measure_gausser_impl_2(p) << '\n';
+  std::clog << "n_millis_gausser_impl_3: " << measure_gausser_impl_3(p) << '\n';
 }
 
 int main()
