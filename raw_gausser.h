@@ -10,7 +10,7 @@ class raw_gausser
 {
 public:
   ///@param sd standard deviation of the gaussian
-  raw_gausser(const double sd);
+  explicit raw_gausser(const double sd);
 
   ///Get the standard deviation of the gaussian
   double sd() const noexcept { return m_sd; }
