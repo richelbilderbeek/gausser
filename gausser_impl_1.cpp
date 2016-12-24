@@ -1,13 +1,17 @@
 #include "gausser_impl_1.h"
 
 #include <cassert>
+#include <stdexcept>
 
 #include "gausser.h"
 
 ribi::gausser_impl_1::gausser_impl_1(const double sd)
   : m_sd{sd}, m_lut{create_lut(sd, 8000)}
 {
-  assert(sd >= 0.0);
+  if (m_sd <= 0.0)
+  {
+    throw std::invalid_argument("sd must be bigger than zero");
+  }
 }
 
 std::vector<double> ribi::gausser_impl_1::create_lut(const double sd, const int sz)
