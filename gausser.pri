@@ -1,3 +1,5 @@
+INCLUDEPATH += $$PWD
+
 SOURCES += \
     $$PWD/gausser.cpp \
     $$PWD/gausser_impl_1.cpp \
