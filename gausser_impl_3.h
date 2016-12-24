@@ -2,8 +2,12 @@
 #define GAUSSER_IMPL_3_H
 
 #include <array>
-
+#include "gausser_impl_2.h"
 namespace ribi {
+
+using gausser_impl_3 = gausser_impl_2;
+
+#ifdef FIX_WHY_IS_THIS_IMPLEMENTATION_SO_INPRECISE
 
 ///Quick calculation of Gauss
 class gausser_impl_3
@@ -23,6 +27,9 @@ private:
   ///Create the LUT
   std::array<double, 16384> create_lut(const double sd);
 };
+
+#endif // FIX_WHY_IS_THIS_IMPLEMENTATION_SO_INPRECISE
+
 
 } //~namespace ribi
 
