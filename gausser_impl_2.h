@@ -12,7 +12,10 @@ public:
   ///@param sd standard deviation of the gaussian
   explicit gausser_impl_2(const double sd);
 
-  ///Fast function
+  ///Get the standard deviation of the gaussian
+  double sd() const noexcept { return m_sd; }
+
+  ///Get the density at the gaussion at x. Will be 1.0 for x equals 0.0
   double operator()(const double x) const noexcept;
 
 private:
