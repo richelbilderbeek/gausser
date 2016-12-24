@@ -10,7 +10,7 @@ class gausser_impl_1
 {
 public:
   ///@param sd standard deviation of the gaussian
-  gausser_impl_1(const double sd);
+  explicit gausser_impl_1(const double sd);
 
   ///Block expensive copies
   //gausser_impl_1(const gausser_impl_1&) = delete;

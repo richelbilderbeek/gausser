@@ -14,7 +14,7 @@ class gausser_impl_3
 {
 public:
   ///@param sd standard deviation of the gaussian
-  gausser_impl_3(const double sd);
+  explicit gausser_impl_3(const double sd);
 
   double operator()(const double x) const noexcept;
 
