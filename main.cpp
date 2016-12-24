@@ -144,7 +144,25 @@ void benchmark_gausser()
   std::clog << "n_millis_gausser_impl_3: " << measure_gausser_impl_3(p) << '\n';
 }
 
+void show_gaussers()
+{
+  const double sd{1.0};
+  gausser_impl_1 g1(sd);
+  gausser_impl_2 g2(sd);
+  gausser_impl_3 g3(sd);
+  for (double x{0.0}; x < 4.0; x+=0.01)
+  {
+    const double y0{gauss(x, sd)};
+    const double y1{g1(x)};
+    const double y2{g2(x)};
+    const double y3{g3(x)};
+    std::cout << x << '\t' << y0 << '\t' << y1 << '\t' << y2 << '\t' << y3 << '\n';
+  }
+  std::cout << std::endl;
+}
+
 int main()
 {
+  show_gaussers();
   benchmark_gausser();
 }
