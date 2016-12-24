@@ -12,6 +12,10 @@ public:
   ///@param sd standard deviation of the gaussian
   gausser_impl_1(const double sd);
 
+  ///Block expensive copies
+  //gausser_impl_1(const gausser_impl_1&) = delete;
+  //gausser_impl_1& operator=(const gausser_impl_1&) = delete;
+
   ///Get the standard deviation of the gaussian
   double sd() const noexcept { return m_sd; }
 
