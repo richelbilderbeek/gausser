@@ -20,7 +20,18 @@ public:
   double sd() const noexcept { return m_sd; }
 
   ///Get the density at the gaussion at x. Will be 1.0 for x equals 0.0
-  double operator()(const double x) const noexcept;
+  inline double operator()(const double x) const noexcept
+  {
+    const double f{(x + 4.0) / 8.0};
+    const int i{
+      static_cast<int>(
+        f * static_cast<double>(m_lut.size())
+      )
+    };
+    if (i < 0) return m_lut[0];
+    if (i > static_cast<int>(m_lut.size())) return m_lut.back();
+    return m_lut[i];
+  }
 
 private:
   const double m_sd;

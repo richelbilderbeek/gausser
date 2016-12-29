@@ -26,7 +26,8 @@ std::vector<double> ribi::gausser_impl_1::create_lut(const double sd, const int 
   return v;
 }
 
-double ribi::gausser_impl_1::operator()(const double x) const noexcept
+/*
+inline double ribi::gausser_impl_1::operator()(const double x) const noexcept
 {
   //Fraction of range
   const double f{(x + 4.0) / 8.0};
@@ -39,3 +40,4 @@ double ribi::gausser_impl_1::operator()(const double x) const noexcept
   if (i > static_cast<int>(m_lut.size())) return m_lut.back();
   return m_lut[i];
 }
+*/
