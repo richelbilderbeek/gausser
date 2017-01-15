@@ -1,2 +1,14 @@
 #!/bin/bash
 clang-format -i {*.cpp,*.h}
+
+# Try to use GCC fails...
+#X clang-tidy -checks=* main.cpp -- -std=c++14 -stdlib=libc++
+#X clang-tidy -checks=* main.cpp -- -std=c++14 -stdlib=libstdc++
+#X clang-tidy -checks=* main.cpp -- -std=c++14 -stdlib=libc++ -I/usr/include/c++/5.4.0
+#X clang-tidy -checks=* main.cpp -- -std=c++14 -stdlib=libstdc++ -I/usr/include/c++/5.4.0
+#X clang-tidy -checks=* main.cpp -- -std=c++14 -stdlib=libc++ -I/usr/include/c++/5
+#X clang-tidy -checks=* main.cpp -- -std=c++14 -stdlib=libstdc++ -I/usr/include/c++/5
+#X clang-tidy -checks=* main.cpp -- std=c++14 -I/usr/lib/i386-linux-gnu/qt5/mkspecs/linux-g++
+
+# Note: install clang
+clang-tidy -checks=* {*.cpp,*.h} -- std=c++14
