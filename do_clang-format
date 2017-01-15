@@ -1,2 +1,2 @@
 #!/bin/bash
-clang-format
+clang-format -i {*.cpp,*.h}
