@@ -1,11 +1,11 @@
-#include <chrono>
-#include <iostream>
-#include <string>
-#include <random>
 #include "gausser.h"
 #include "gausser_impl_1.h"
 #include "gausser_impl_2.h"
 #include "gausser_impl_3.h"
+#include <chrono>
+#include <iostream>
+#include <random>
+#include <string>
 
 using namespace ribi;
 using my_clock = std::chrono::high_resolution_clock;
@@ -19,7 +19,7 @@ struct benchmark_parameters
   const double dx{8.0 / 1000000000.0};
 };
 
-double measure_gauss(const benchmark_parameters& p)
+double measure_gauss(const benchmark_parameters &p)
 {
   const double sd{p.sd};
   const double min_x{p.min_x};
@@ -29,7 +29,7 @@ double measure_gauss(const benchmark_parameters& p)
   double sum{0.0};
   const auto start_time = my_clock::now();
   {
-    for (double x{min_x}; x<max_x; x+=dx)
+    for (double x{min_x}; x < max_x; x += dx)
     {
       sum += gauss(x, sd);
     }
@@ -41,7 +41,7 @@ double measure_gauss(const benchmark_parameters& p)
   return n_millis;
 }
 
-double measure_gausser(const benchmark_parameters& p)
+double measure_gausser(const benchmark_parameters &p)
 {
   const double sd{p.sd};
   const double min_x{p.min_x};
@@ -52,7 +52,7 @@ double measure_gausser(const benchmark_parameters& p)
   const auto start_time = my_clock::now();
   {
     const gausser g(sd);
-    for (double x{min_x}; x<max_x; x+=dx)
+    for (double x{min_x}; x < max_x; x += dx)
     {
       sum += g(x);
     }
@@ -64,7 +64,7 @@ double measure_gausser(const benchmark_parameters& p)
   return n_millis;
 }
 
-double measure_gausser_impl_1(const benchmark_parameters& p)
+double measure_gausser_impl_1(const benchmark_parameters &p)
 {
   const double sd{p.sd};
   const double min_x{p.min_x};
@@ -75,7 +75,7 @@ double measure_gausser_impl_1(const benchmark_parameters& p)
   const auto start_time = my_clock::now();
   {
     const gausser_impl_1 g(sd);
-    for (double x{min_x}; x<max_x; x+=dx)
+    for (double x{min_x}; x < max_x; x += dx)
     {
       sum += g(x);
     }
@@ -87,7 +87,7 @@ double measure_gausser_impl_1(const benchmark_parameters& p)
   return n_millis;
 }
 
-double measure_gausser_impl_2(const benchmark_parameters& p)
+double measure_gausser_impl_2(const benchmark_parameters &p)
 {
   const double sd{p.sd};
   const double min_x{p.min_x};
@@ -98,7 +98,7 @@ double measure_gausser_impl_2(const benchmark_parameters& p)
   const auto start_time = my_clock::now();
   {
     const gausser_impl_2 g(sd);
-    for (double x{min_x}; x<max_x; x+=dx)
+    for (double x{min_x}; x < max_x; x += dx)
     {
       sum += g(x);
     }
@@ -110,7 +110,7 @@ double measure_gausser_impl_2(const benchmark_parameters& p)
   return n_millis;
 }
 
-double measure_gausser_impl_3(const benchmark_parameters& p)
+double measure_gausser_impl_3(const benchmark_parameters &p)
 {
   const double sd{p.sd};
   const double min_x{p.min_x};
@@ -121,7 +121,7 @@ double measure_gausser_impl_3(const benchmark_parameters& p)
   const auto start_time = my_clock::now();
   {
     const gausser_impl_3 g(sd);
-    for (double x{min_x}; x<max_x; x+=dx)
+    for (double x{min_x}; x < max_x; x += dx)
     {
       sum += g(x);
     }
@@ -132,7 +132,6 @@ double measure_gausser_impl_3(const benchmark_parameters& p)
   std::clog << "sum gausser_impl_3: " << sum << '\n';
   return n_millis;
 }
-
 
 void benchmark_gausser()
 {
@@ -150,13 +149,14 @@ void show_gaussers()
   gausser_impl_1 g1(sd);
   gausser_impl_2 g2(sd);
   gausser_impl_3 g3(sd);
-  for (double x{0.0}; x < 4.0; x+=0.01)
+  for (double x{0.0}; x < 4.0; x += 0.01)
   {
     const double y0{gauss(x, sd)};
     const double y1{g1(x)};
     const double y2{g2(x)};
     const double y3{g3(x)};
-    std::cout << x << '\t' << y0 << '\t' << y1 << '\t' << y2 << '\t' << y3 << '\n';
+    std::cout << x << '\t' << y0 << '\t' << y1 << '\t' << y2 << '\t' << y3
+              << '\n';
   }
   std::cout << std::endl;
 }
