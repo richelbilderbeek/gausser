@@ -1,5 +1,5 @@
 #!/bin/bash
-clang-format -i {*.cpp,*.h}
+#clang-format -i {*.cpp,*.h}
 
 # Try to use GCC fails...
 #X clang-tidy -checks=* main.cpp -- -std=c++14 -stdlib=libc++
@@ -11,4 +11,18 @@ clang-format -i {*.cpp,*.h}
 #X clang-tidy -checks=* main.cpp -- std=c++14 -I/usr/lib/i386-linux-gnu/qt5/mkspecs/linux-g++
 
 # Note: install clang
-clang-tidy -checks=* {*.cpp,*.h} -- std=c++14
+# Note also: sudo apt-get install gcc-multilib g++-multilib
+for filename in `ls {*.cpp,*.h}`
+do
+  echo "Fixing "$filename
+  clang-tidy -checks=*,-cppcoreguidelines-pro-type-vararg $filename -- -std=c++14 -I/usr/include/c++/5.4.0 -I/usr/include/i386-linux-gnu/c++/5.4.0
+  #clang-tidy -v -checks=* $filename -- -std=c++14
+  #clang-tidy -checks=* $filename -- -std=c++14 -I/usr/lib/clang/3.8.0/include
+  #clang-tidy -checks=* $filename -- -std=c++14 -stdlib=libstdc++ -I/usr/include/clang/3.8.0/include
+  #clang-tidy -checks=* $filename -- -std=c++14 -stdlib=libstdc++
+done
+
+#clang-tidy -checks=* main.cpp -- -std=c++14 -I/usr/include/c++/5.4.0 -I/usr/lib/clang/3.8.0/include
+
+
+#clang-tidy -checks=* gausser_impl_1.h -- -std=c++14 -I/usr/include/c++/5.4.0 -I/usr/include/i386-linux-gnu/c++/5.4.0
