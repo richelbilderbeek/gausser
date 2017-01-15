@@ -6,7 +6,7 @@
 #include "gausser.h"
 
 ribi::gausser_impl_1::gausser_impl_1(const double sd)
-  : m_sd{sd}, m_lut{create_lut(sd, 8000)}
+    : m_sd{sd}, m_lut{create_lut(sd, 8000)}
 {
   if (m_sd <= 0.0)
   {
@@ -14,7 +14,8 @@ ribi::gausser_impl_1::gausser_impl_1(const double sd)
   }
 }
 
-std::vector<double> ribi::gausser_impl_1::create_lut(const double sd, const int sz)
+std::vector<double>
+ribi::gausser_impl_1::create_lut(const double sd, const int sz)
 {
   std::vector<double> v;
   v.reserve(sz + 1);

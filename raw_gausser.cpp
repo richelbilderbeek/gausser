@@ -5,8 +5,7 @@
 
 #include "gausser.h"
 
-ribi::raw_gausser::raw_gausser(const double sd)
-  : m_sd{sd}
+ribi::raw_gausser::raw_gausser(const double sd) : m_sd{sd}
 {
   if (m_sd <= 0.0)
   {
