@@ -15,7 +15,7 @@
 for filename in `ls {*.cpp,*.h}`
 do
   echo "Fixing "$filename
-  clang-tidy -checks=*,-cppcoreguidelines-pro-type-vararg $filename -- -std=c++14 -I/usr/include/c++/5.4.0 -I/usr/include/i386-linux-gnu/c++/5.4.0
+  clang-tidy -checks=*,-cppcoreguidelines-pro-type-vararg --fix -fix-errors $filename -- -std=c++14 -I/usr/include/c++/5.4.0 -I/usr/include/i386-linux-gnu/c++/5.4.0
   #clang-tidy -v -checks=* $filename -- -std=c++14
   #clang-tidy -checks=* $filename -- -std=c++14 -I/usr/lib/clang/3.8.0/include
   #clang-tidy -checks=* $filename -- -std=c++14 -stdlib=libstdc++ -I/usr/include/clang/3.8.0/include
